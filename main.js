@@ -40,7 +40,7 @@ $(function() {
 
     // In condition 2, user will receive 6 likes at the following timepoints (in ms). Default: [10000, 15000,35000,80000,1320000,150000]
     //settings.condition_2_likes = [10000,15000,35000,80000,100000,132000,150000];
-    settings.condition_2_likes = [10000,90000];
+    settings.condition_2_likes = [10000,11111];
     settings.condition_2_Dislikes = [10000,132000];
     // In condition 3, user will receive 9 likes at the following timepoints (in ms). Default: [10000, 11000,15000,35000,80000,100000,110000,150000,20000]
   //  settings.condition_3_likes = [10000,11000,15000,35000,80000,100000,110000,150000,20000];
@@ -207,10 +207,13 @@ $(function() {
   	});
   }
   function DeaktiviereLike(){
+	  	 setTimeout(function(){ 
     $('.btn-like').attr("disabled", true);
+	alert("Die Zeit ist abgelaufen. Bitte kehren Sie nun zum Fragebogen zurück."); }, 2000);
   }
   function DeaktiviereDisLike(){
-    $('.btn-Dislike').attr("disabled", true);
+	setTimeout(function(){   
+    $('.btn-Dislike').attr("disabled", true);}, 3000);
   }
 
   // **Slide:** **Task**
@@ -223,10 +226,10 @@ $(function() {
   	jQuery("#countdown").countDown({
   		startNumber: window.settings.tasklength/1000, // in seconds
   		callBack: function(me) {
-  			console.log('over');
+  		console.log('over');
         $('#timer').text('00:00');
         DeaktiviereLike();
-        DeaktiviereDisLike();
+        DeaktiviereDisLike();	
   		}
   	});
 
@@ -300,7 +303,7 @@ $(function() {
 
 	function DislikeFunction(times,usernames){
 	$('.usersDislikes').each(function(){
-		if(times==90000){
+		if(times==11111){
 					var that = $(this);
 					themsg = usernames + " gefällt deine Beschreibung nicht";
 					setTimeout(function(themsg) {
@@ -374,7 +377,7 @@ $(function() {
 
         for(var i=0; i<times.length; i++)
         {
-          if(times[i]== 12000 || times[i] == 35000 ||  times[i] ==  13333 || times[i] == 20000 || times[i] == 25000 || times[i] == 40000 || times[i] ==  9999999 || times[i] ==  9000 || times[i] ==  40000 || times[i] ==  38000 || times[i] ==  1000 ){
+          if(times[i]== 12000 || times[i] == 35000 ||  times[i] ==  13333 || times[i] == 20000 || times[i] == 25000 || times[i] == 40000 || times[i] ==  9999999 || times[i] ==  9000 || times[i] ==  40000 || times[i] ==  38000 || times[i] ==  1000 || times[i] == 55248 || times[i] == 68791 || times[i] == 76542 || times[i] == 87654){
             setTimeout(function () {
             that.text(parseInt(that.text()) + 0);
             }, times[i]);
