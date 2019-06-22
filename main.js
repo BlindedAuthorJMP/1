@@ -7,11 +7,12 @@ $(function() {
 
   // **Parameters**
   // ------------
-
+  var AnzahlDerLikes=0;
+  var AnzahlDerDisLikes=0;
   function set_settings() {
     window.settings = [];
 
-	// **Number** **of** **Avatar** **Images**
+	// **Number** **of** **Avatar** **Images**hack
 	// Number of avatars the user can choose from. Can be changed to any number, depending on how many avatars you would like to display. Default: 82
 	// The avatar images used in the online preview of the paradigm were created using by pickaface.net and due to their terms not available for redistribution. You should therefore create your own images. All images should be 250x250 pixels in size and carry the names "avatar_NUMBER.png" (e.g. avatar_1.png; "png" should be lower case; the numbers in the names should be consequtive, starting from 1). The number of avatars dependeds on the corresponding parameter. The images should be placed in folder "avatars," located in the main study folder extracted on your computer or server.
 
@@ -23,7 +24,8 @@ $(function() {
 	// If the study is called with a parameter for redirection, as explained in the documentation, this value is overwritten.
 	// To the redirect link, the following information will be appended: (1) participant number, (2) condition, (3) username, (4) description submitted by participant. These variables can be extracted from the link, saved as data, and used for linking the Social Media Ostracism paradigm to subsequent tasks and measures. See documentation for more details.
 
-    settings.defaultredirect = 'http://ww2.unipark.de/uc/unimannheim';
+   settings.defaultredirect = 'http://ww2.unipark.de/uc/unimannheim';
+ //settings.defaultredirect =  'http://www.soscisurvey.de/tutorial171431/?q=TestTool';
 
 
 	// **Tasklength**
@@ -207,12 +209,12 @@ $(function() {
   	});
   }
   function DeaktiviereLike(){
-	  	 setTimeout(function(){ 
+	  	 setTimeout(function(){
     $('.btn-like').attr("disabled", true);
-	alert("Die Zeit ist abgelaufen. Bitte kehren Sie nun zum Fragebogen zurück."); }, 2000);
-  }
+	});
+}
   function DeaktiviereDisLike(){
-	setTimeout(function(){   
+	setTimeout(function(){
     $('.btn-Dislike').attr("disabled", true);}, 3000);
   }
 
@@ -229,7 +231,7 @@ $(function() {
   		console.log('over');
         $('#timer').text('00:00');
         DeaktiviereLike();
-        DeaktiviereDisLike();	
+        DeaktiviereDisLike();
   		}
   	});
 
@@ -393,22 +395,31 @@ $(function() {
     });
 
 
-
+    console.log("AnzahlDerLikes",AnzahlDerLikes);
     // Initialize like buttons
 	  $('.btn-like').on('click', function() {
+
 		  $(this).prev().text(parseInt($(this).prev().text()) + 1);
-      // Like buttons can only be clicked once
+
 		  $(this).attr("disabled", true);
       $(this).parent().parent().find('.btn-Dislike').attr("disabled", true);
+
+      AnzahlDerLikes++;
+      console.log("AnzahlDerLikes",AnzahlDerLikes);
+      //return AnzahlDerLikes.value;
 	  });
 
 
+
+    console.log("AnzahlDerDisLikes",AnzahlDerDisLikes);
     // Initialize Dislike buttons
     $('.btn-Dislike').on('click', function() {
     	$(this).prev().text(parseInt($(this).prev().text()) + 1);
       // Like buttons can only be clicked once
     	$(this).attr("disabled", true);
       $(this).parent().parent().find('.btn-like').attr("disabled", true);
+      AnzahlDerDisLikes++;
+      console.log("AnzahlDerDisLikes",AnzahlDerDisLikes);
     });
 
     // Initalize Masonry plugin
@@ -429,9 +440,9 @@ $(function() {
     $('#timer').text('00:00');
 
     $('#final-continue').on('click', function() {
-
+      var UV =1;
       // Redirect link
-      location.href = window.redirect+'&a='+window.participant+'&b='+window.condition+'&c='+encodeURI(window.username)+'&d='+window.avatarexport+'&e='+encodeURI(window.description);  // change p->a, c->b, u ->c, av->d, d->e
+      location.href = window.redirect+'&a='+window.participant+'&b='+window.condition+'&c='+encodeURI(window.username)+'&d='+window.avatarexport+'&e='+encodeURI(window.description)+'&f='+encodeURI(AnzahlDerLikes)+'&g='+encodeURI(AnzahlDerDisLikes)+'&g='+encodeURI(AnzahlDerDisLikes)+'&i='+encodeURI(UV);  // change p->a, c->b, u ->c, av->d, d->e
 
     });
 
