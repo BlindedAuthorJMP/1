@@ -26,7 +26,7 @@ $(function() {
 
    //settings.defaultredirect = 'http://ww2.unipark.de/uc/unimannheim';
    settings.defaultredirect = 'https://www.soscisurvey.de/masterarbeit_soziale_netzwerke2/';
-	  	
+	  window.open(settings.defaultredirect);
  //settings.defaultredirect =  'http://www.soscisurvey.de/tutorial171431/?q=TestTool';
 
 
