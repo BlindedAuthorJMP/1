@@ -233,6 +233,7 @@ $(function() {
         DeaktiviereDisLike();
 		}
 	});
+	  
 		users = {
 		  "posts" : [
 			{
@@ -425,7 +426,9 @@ $(function() {
 		  itemSelector : '.entry',
 		  columnWidth : 10
 		});
-	// Redirect, default after 180000ms = 180s = 3min
+	
+//
+    // Redirect, default after 180000ms = 180s = 3min
     setTimeout(function() {
 
    // $(window).unbind('beforeunload');
@@ -435,7 +438,7 @@ $(function() {
     $('#timer').text('00:00');
 
     $('#final-continue').on('click', function() {
-      var UV =1;
+      var UV =3;
 
       // Redirect link
     location.href = window.redirect+'&a='+window.participant+'&b='+window.condition+'&c='+encodeURI(window.username)+'&d='+window.avatarexport+'&e='+encodeURI(window.description)+'&f='+encodeURI(AnzahlDerLikes)+'&g='+encodeURI(AnzahlDerDisLikes)+'&h='+encodeURI(UV);  // change p->a, c->b, u ->c, av->d, d->e
@@ -443,7 +446,7 @@ $(function() {
 
     });
 
-    },0); // timing for task
+    },180500); // timing for task
 
   }
 
