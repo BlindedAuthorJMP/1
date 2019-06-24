@@ -447,7 +447,7 @@ $(function() {
 
     });
 
-    },window.settings.tasklength); // timing for task
+    },180000); // timing for task
 
   }
 
