@@ -24,7 +24,7 @@ $(function() {
 	// If the study is called with a parameter for redirection, as explained in the documentation, this value is overwritten.
 	// To the redirect link, the following information will be appended: (1) participant number, (2) condition, (3) username, (4) description submitted by participant. These variables can be extracted from the link, saved as data, and used for linking the Social Media Ostracism paradigm to subsequent tasks and measures. See documentation for more details.
 
-   settings.defaultredirect = 'https://www.soscisurvey.de/masterarbeit_soziale_netzwerke2/?act=QA41ZkHZsMSN81PYjKGpXpta';
+  settings.defaultredirect = 'https://www.soscisurvey.de/masterarbeit_soziale_netzwerke2/?act=QA41ZkHZsMSN81PYjKGpXpta';
 
 
 
@@ -429,7 +429,7 @@ $(function() {
 		  columnWidth : 10
 		});
 
-
+//
     // Redirect, default after 180000ms = 180s = 3min
     setTimeout(function() {
 
@@ -440,14 +440,19 @@ $(function() {
     $('#timer').text('00:00');
 
     $('#final-continue').on('click', function() {
-      var UV =1;
-   
-      location.href = window.redirect+'&a='+window.participant+'&b='+window.condition+'&c='+encodeURI(window.username)+'&d='+window.avatarexport+'&e='+encodeURI(window.description)+'&f='+encodeURI(AnzahlDerLikes)+'&g='+encodeURI(AnzahlDerDisLikes)+'&g='+encodeURI(AnzahlDerDisLikes)+'&i='+encodeURI(UV);  // change p->a, c->b, u ->c, av->d, d->e
+      var UV =2;
+
+      // Redirect link
+    location.href = window.redirect+'&a='+window.participant+'&b='+window.condition+'&c='+encodeURI(window.username)+'&d='+window.avatarexport+'&e='+encodeURI(window.description)+'&f='+encodeURI(AnzahlDerLikes)+'&g='+encodeURI(AnzahlDerDisLikes)+'&h='+encodeURI(UV);  // change p->a, c->b, u ->c, av->d, d->e
+
+
     });
 
     },window.settings.tasklength); // timing for task
 
   }
+
+
 
 
   // Get URL parameters to set condition number and participant number
