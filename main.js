@@ -218,21 +218,17 @@ $(function() {
     $('.btn-Dislike').attr("disabled", true);}, 3000);
 }
   // **Slide:** **Task**
-  function init_task() {
-
-	  $('#task').show();
-
+    function init_task() {
+    $('#task').show();
 	shortcut.add("Backspace",function() {});
-
   	jQuery("#countdown").countDown({
   		startNumber: window.settings.tasklength/1000, // in seconds
   		callBack: function(me) {
   			console.log('over');
         $('#timer').text('00:00');
-	
         DeaktiviereLike();
         DeaktiviereDisLike();
-	 // Redirect, default after 180000ms = 180s = 3min
+			    // Redirect, default after 180000ms = 180s = 3min
     setTimeout(function() {
 
    // $(window).unbind('beforeunload');
@@ -250,11 +246,11 @@ $(function() {
 
     });
 
-    },0); // timing for task
+    },1); // timing for task
 
   }
-	});
-	  
+  		}
+  	});	  
 		users = {
 		  "posts" : [
 			{
