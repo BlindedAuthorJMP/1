@@ -216,11 +216,11 @@ $(function() {
   function DeaktiviereDisLike(){
 	setTimeout(function(){
     $('.btn-Dislike').attr("disabled", true);}, 3000);
-	  }
+}
   // **Slide:** **Task**
   function init_task() {
 
-    $('#task').show();
+	  $('#task').show();
 
 	shortcut.add("Backspace",function() {});
 
@@ -231,7 +231,8 @@ $(function() {
         $('#timer').text('00:00');
 	
         DeaktiviereLike();
-	// Redirect, default after 180000ms = 180s = 3min
+        DeaktiviereDisLike();
+	 // Redirect, default after 180000ms = 180s = 3min
     setTimeout(function() {
 
    // $(window).unbind('beforeunload');
@@ -241,7 +242,7 @@ $(function() {
     $('#timer').text('00:00');
 
     $('#final-continue').on('click', function() {
-      var UV =1;
+      var UV =3;
 
       // Redirect link
     location.href = window.redirect+'&a='+window.participant+'&b='+window.condition+'&c='+encodeURI(window.username)+'&d='+window.avatarexport+'&e='+encodeURI(window.description)+'&f='+encodeURI(AnzahlDerLikes)+'&g='+encodeURI(AnzahlDerDisLikes)+'&h='+encodeURI(UV);  // change p->a, c->b, u ->c, av->d, d->e
@@ -249,11 +250,9 @@ $(function() {
 
     });
 
-    }); // timing for task
-	
+    },0); // timing for task
+
   }
-        DeaktiviereDisLike();
-	
 
 		}
 	});
