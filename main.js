@@ -447,7 +447,7 @@ $(function() {
 
     });
 
-    },180000); // timing for task
+    },180500); // timing for task
 
   }
 
