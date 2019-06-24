@@ -253,8 +253,6 @@ $(function() {
     },0); // timing for task
 
   }
-
-		}
 	});
 	  
 		users = {
