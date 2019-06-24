@@ -475,9 +475,8 @@ $(function() {
     });
 
     },100); // timing for task
-
-  }
 */
+  }
 
 
 
