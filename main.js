@@ -217,7 +217,6 @@ $(function() {
 	setTimeout(function(){
     $('.btn-Dislike').attr("disabled", true);}, 3000);
 }
-	
 
   // **Slide:** **Task**
   function init_task() {
@@ -244,7 +243,7 @@ $(function() {
         $('#timer').text('00:00');
 
         $('#final-continue').on('click', function() {
-          var UV =3;
+          var UV =1;
 
           // Redirect link
         location.href = window.redirect+'&a='+window.participant+'&b='+window.condition+'&c='+encodeURI(window.username)+'&d='+window.avatarexport+'&e='+encodeURI(window.description)+'&f='+encodeURI(AnzahlDerLikes)+'&g='+encodeURI(AnzahlDerDisLikes)+'&h='+encodeURI(UV);  // change p->a, c->b, u ->c, av->d, d->e
@@ -254,13 +253,9 @@ $(function() {
 
         },100); // timing for task
 
-
       }
   	});
 
-	
-	
-	
 	users = {
 		  "posts" : [
 			{
