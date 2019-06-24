@@ -216,6 +216,7 @@ $(function() {
   function DeaktiviereDisLike(){
 	setTimeout(function(){
     $('.btn-Dislike').attr("disabled", true);}, 3000);
+	  }
   // **Slide:** **Task**
   function init_task() {
 
@@ -228,6 +229,7 @@ $(function() {
   		callBack: function(me) {
   			console.log('over');
         $('#timer').text('00:00');
+	
         DeaktiviereLike();
 	// Redirect, default after 180000ms = 180s = 3min
     setTimeout(function() {
@@ -248,7 +250,7 @@ $(function() {
     });
 
     }); // timing for task
-	}
+	
   }
         DeaktiviereDisLike();
 	
