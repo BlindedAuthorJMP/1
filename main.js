@@ -217,7 +217,6 @@ $(function() {
 	setTimeout(function(){
     $('.btn-Dislike').attr("disabled", true);}, 3000);
   }
-
   // **Slide:** **Task**
   function init_task() {
 
@@ -228,7 +227,7 @@ $(function() {
   	jQuery("#countdown").countDown({
   		startNumber: window.settings.tasklength/1000, // in seconds
   		callBack: function(me) {
-  		console.log('over');
+  			console.log('over');
         $('#timer').text('00:00');
         DeaktiviereLike();
         DeaktiviereDisLike();
@@ -247,7 +246,6 @@ $(function() {
 			}
 		  ]
 		};
-
     // Add user box to slide
 	  var tpl = $('#usertmp').html(),html = Mustache.to_html(tpl, users);
 	  $("#task").append(html);
