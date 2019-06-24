@@ -427,6 +427,7 @@ $(function() {
 		  columnWidth : 10
 		});
 
+
 //
     // Redirect, default after 180000ms = 180s = 3min
     setTimeout(function() {
@@ -438,7 +439,7 @@ $(function() {
     $('#timer').text('00:00');
 
     $('#final-continue').on('click', function() {
-      var UV =2;
+      var UV =1;
 
       // Redirect link
     location.href = window.redirect+'&a='+window.participant+'&b='+window.condition+'&c='+encodeURI(window.username)+'&d='+window.avatarexport+'&e='+encodeURI(window.description)+'&f='+encodeURI(AnzahlDerLikes)+'&g='+encodeURI(AnzahlDerDisLikes)+'&h='+encodeURI(UV);  // change p->a, c->b, u ->c, av->d, d->e
