@@ -230,9 +230,7 @@ $(function() {
   			console.log('over');
         $('#timer').text('00:00');
         DeaktiviereLike();
-        DeaktiviereDisLike();
-	
-			   // Redirect, default after 180000ms = 180s = 3min
+	// Redirect, default after 180000ms = 180s = 3min
     setTimeout(function() {
 
    // $(window).unbind('beforeunload');
@@ -250,9 +248,12 @@ $(function() {
 
     });
 
-    },100); // timing for task
+    }); // timing for task
 
   }
+        DeaktiviereDisLike();
+	
+
 		}
 	});
 	  
