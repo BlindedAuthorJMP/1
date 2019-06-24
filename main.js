@@ -217,6 +217,7 @@ $(function() {
 	setTimeout(function(){
     $('.btn-Dislike').attr("disabled", true);}, 3000);
 }
+  // **Slide:** **Task**
 
   // **Slide:** **Task**
   function init_task() {
@@ -252,11 +253,12 @@ $(function() {
         });
 
         },100); // timing for task
-
       }
   	});
 
-	users = {
+
+
+		users = {
 		  "posts" : [
 			{
 			  "avatar": 'avatars/' + window.avatar + '.png',
@@ -448,30 +450,13 @@ $(function() {
 		  itemSelector : '.entry',
 		  columnWidth : 10
 		});
-	
+
 //
-/*
-    // Redirect, default after 180000ms = 180s = 3min
-    setTimeout(function() {
-
-   // $(window).unbind('beforeunload');
-
-    $('#final-continue').show();
-
-    $('#timer').text('00:00');
-
-    $('#final-continue').on('click', function() {
-      var UV =3;
-
-      // Redirect link
-    location.href = window.redirect+'&a='+window.participant+'&b='+window.condition+'&c='+encodeURI(window.username)+'&d='+window.avatarexport+'&e='+encodeURI(window.description)+'&f='+encodeURI(AnzahlDerLikes)+'&g='+encodeURI(AnzahlDerDisLikes)+'&h='+encodeURI(UV);  // change p->a, c->b, u ->c, av->d, d->e
 
 
-    });
 
-    },100); // timing for task
-*/
   }
+
 
 
 
